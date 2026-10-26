@@ -1,7 +1,7 @@
 # Glucose–Insulin Dynamics in Type 1 Diabetes
 ### The Bergman Minimal Model and a Hybrid Universal Neural ODE
 
-Mathematical Modelling group project. We model how blood glucose responds to meals and insulin in people with Type 1 diabetes. We start from the Bergman minimal model, adapted to Type 1 diabetes, and then extend it into a **hybrid universal differential equation (UDE)**. In the hybrid, small neural networks inside the ODE learn how a meal is absorbed from the gut, while the rest of the physiology stays as interpretable equations.
+We model how blood glucose responds to meals and insulin in people with Type 1 diabetes. We start from the Bergman minimal model, adapted to Type 1 diabetes, and then extend it into a **hybrid universal differential equation (UDE)**. In the hybrid, small neural networks inside the ODE learn how a meal is absorbed from the gut, while the rest of the physiology stays as interpretable equations.
 
 ## Highlights
 
@@ -53,21 +53,10 @@ jupyter notebook project.ipynb      # Kernel > Restart & Run All
 
 With the saved models, the notebook runs in about a minute. To refit and retrain everything from scratch, set `RETRAIN = True` in the setup cell; this takes about 15–20 minutes on a laptop CPU.
 
-The simulated patients were generated once with `data/simulated/generate_simglucose.py`, which needs `pip install simglucose`. You don't need it to run the notebook.
+The simulated patients were generated once with `data/simulated/generate_simglucose.py`, which needs `pip install simglucose`. 
 
 ## Data sources
 
 - J. I. Hidalgo et al., *HUPA-UCM diabetes dataset*, Data in Brief 55 (2024) 110559. [Mendeley Data](https://data.mendeley.com/datasets/3hbcscwz44/1)
 - J. Xie, *simglucose*, a Python implementation of the UVA/Padova Type 1 diabetes simulator, 2018. [GitHub](https://github.com/jxx123/simglucose)
-
-## Team
-
-| Member | Contribution |
-|---|---|
-| Name 1 | Model formulation, equilibrium and stability analysis |
-| Name 2 | Sensitivity analysis and simulator validation |
-| Name 3 | Parameter estimation and identifiability |
-| Name 4 | Hybrid neural ODE design and training |
-| Name 5 | Data processing, baselines, evaluation and figures |
-
 
