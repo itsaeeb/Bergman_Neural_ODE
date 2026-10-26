@@ -1,0 +1,26 @@
+patient,used,days,carb unit,meals/day,insulin U/day,mean glucose,masked %,reason
+HUPA0001P,yes,14.2,10 g,2.8,25.4,181.0,2.4,
+HUPA0002P,yes,11.0,g,1.1,46.5,113.0,8.5,
+HUPA0003P,yes,13.1,10 g,5.0,36.2,143.0,1.8,
+HUPA0004P,yes,11.1,g,1.8,64.0,180.0,16.5,
+HUPA0005P,yes,13.4,10 g,4.1,26.7,148.0,2.1,
+HUPA0006P,yes,8.0,10 g,4.7,50.2,165.0,5.6,
+HUPA0007P,yes,13.4,10 g,6.1,58.4,173.0,2.2,
+HUPA0009P,no,,,,,,,100% of glucose is gap-filled
+HUPA0010P,no,,,,,,,90% of glucose is gap-filled
+HUPA0011P,no,,,,,,,no insulin
+HUPA0014P,no,,,,,,,no basal record
+HUPA0015P,no,,,,,,,"no insulin, no meals"
+HUPA0016P,yes,13.3,10 g,6.2,40.4,150.0,15.0,
+HUPA0017P,yes,12.5,10 g,2.8,22.4,201.0,8.3,
+HUPA0018P,no,,,,,,,"no insulin, no meals"
+HUPA0019P,no,,,,,,,meals/boluses only as 1-markers
+HUPA0020P,no,,,,,,,no meals
+HUPA0021P,no,,,,,,,meals/boluses only as 1-markers
+HUPA0022P,yes,14.0,g,4.9,66.9,113.0,7.8,
+HUPA0023P,yes,13.6,10 g,4.6,20.5,133.0,0.9,
+HUPA0024P,yes,10.1,10 g,1.4,19.0,167.0,2.4,
+HUPA0025P,yes,13.9,10 g,1.4,53.1,114.0,4.6,
+HUPA0026P,no,30.0,10 g,0.2,41.4,157.0,6.1,only 0 usable meal windows for fitting
+HUPA0027P,yes,30.0,10 g,3.7,45.8,118.0,5.9,
+HUPA0028P,yes,30.0,10 g,4.0,23.4,128.0,11.7,

@@ -1,0 +1,9 @@
+,,RMSE 30 min,RMSE 1 h,RMSE 2 h,RMSE 4 h,RMSE all,MAE all
+"held-out days, seen patients",Persistence,29.9,48.7,55.6,52.9,49.8,36.6
+"held-out days, seen patients",Bergman (mechanistic),28.1,45.0,46.8,45.5,43.1,32.7
+"held-out days, seen patients",Hybrid UDE,27.9,44.8,46.0,43.0,42.7,32.3
+"held-out days, seen patients",LSTM,33.7,49.7,55.2,47.6,48.5,37.0
+"held-out days, unseen patients",Persistence,26.5,36.3,69.6,86.9,61.6,44.5
+"held-out days, unseen patients",Bergman (mechanistic),42.7,53.2,73.3,66.4,61.2,45.3
+"held-out days, unseen patients",Hybrid UDE,34.8,46.0,68.4,62.9,56.2,42.5
+"held-out days, unseen patients",LSTM,22.5,30.3,62.1,83.3,56.4,41.3

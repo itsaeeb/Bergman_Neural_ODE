@@ -1,0 +1,39 @@
+% Compartment diagram of the model. Included in report.tex with \input{diagrams/compartment_diagram.tex}
+% (needs \usepackage{tikz} and \usetikzlibrary{positioning,arrows.meta,fit,backgrounds}).
+\begin{tikzpicture}[
+    node distance=6mm and 13mm,
+    box/.style={draw, rounded corners=2pt, minimum width=21mm, minimum height=9mm, align=center, font=\small, fill=white},
+    nn/.style={box, draw=red!70!black, thick, fill=red!6},
+    inp/.style={font=\small, align=center},
+    flow/.style={-{Stealth[length=2.2mm]}, thick},
+    act/.style={-{Stealth[length=2.2mm]}, thick, dashed, blue!60!black}
+]
+  % insulin chain
+  \node[inp] (u) {insulin pump / pen\\ $u(t)$};
+  \node[box, right=of u] (s1) {$S_1$\\ subcut.};
+  \node[box, right=of s1] (s2) {$S_2$\\ subcut.};
+  \node[box, right=of s2] (I) {$I$\\ plasma insulin};
+  \node[box, below=of I] (X) {$X$\\ insulin action};
+  % glucose
+  \node[box, below=of X, minimum width=26mm, minimum height=11mm, fill=blue!5] (G) {$G$\\ plasma glucose};
+  % gut chain
+  \node[inp] (D) at (u |- G) {meal\\ $D\,\delta(t-t_{meal})$};
+  \node[nn, right=8mm of D] (q1) {$Q_1$\\ stomach};
+  \node[nn, right=17mm of q1] (q2) {$Q_2$\\ gut};
+
+  \draw[flow] (u) -- (s1);
+  \draw[flow] (s1) -- node[above, font=\scriptsize] {$k_d$} (s2);
+  \draw[flow] (s2) -- node[above, font=\scriptsize] {$k_d$} (I);
+  \draw[flow] (I) -- node[right, font=\scriptsize] {$p_2 S_I$} (X);
+  \draw[flow] (I.east) -- ++(6mm,0) node[right, font=\scriptsize] {$k_e$};
+  \draw[act] (X) -- node[right, font=\scriptsize] {$-X G$} (G);
+  \draw[flow] (D) -- (q1);
+  \draw[flow, red!70!black] (q1) -- node[above=0.5mm, font=\scriptsize] {$k_{abs}h_1(Q_1)$} (q2);
+  \draw[flow, red!70!black] (q2) -- node[above=1mm, font=\scriptsize] {$R_a$} node[below=1mm, font=\scriptsize] {$k_{abs}h_2(Q_2)$} (G);
+  \draw[flow] (G.east) -- ++(9mm,0) node[right, font=\scriptsize, align=left] {$-p_1(G-G_b)$};
+
+  \begin{scope}[on background layer]
+    \node[draw=red!70!black, dashed, rounded corners, fit=(q1)(q2), inner xsep=1.5mm, inner ysep=6mm,
+          label={[font=\scriptsize, red!70!black]below:neural networks in the hybrid model}] {};
+  \end{scope}
+\end{tikzpicture}

@@ -1,0 +1,4 @@
+,RMSE 30 min,RMSE 1 h,RMSE 2 h,RMSE 4 h,RMSE all,MAE all
+Persistence,15.2,44.0,37.8,24.3,32.1,25.1
+Bergman (mechanistic),14.9,13.9,9.8,11.3,10.9,8.0
+Hybrid UDE,12.2,12.8,9.7,10.1,10.2,7.5
