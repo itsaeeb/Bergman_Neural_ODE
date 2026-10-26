@@ -70,6 +70,4 @@ The simulated patients were generated once with `data/simulated/generate_simgluc
 | Name 4 | Hybrid neural ODE design and training |
 | Name 5 | Data processing, baselines, evaluation and figures |
 
-## AI tools
 
-See the *Acknowledgement of AI tools* section of the report.
