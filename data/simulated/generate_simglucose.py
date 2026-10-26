@@ -4,7 +4,7 @@ Output: one CSV per virtual patient in the same format as HUPA-UCM (';'-separate
 plus a column `true_ra` = the simulator's true rate of glucose appearance from the gut (mg/kg/min),
 which real data never gives us. The notebook only reads these CSVs, so simglucose is not needed to run it.
 
-Run once:  python generate_simglucose.py      (about 5 minutes)
+Run once:  python generate_simglucose.py      
 """
 import sys, types
 from pathlib import Path
