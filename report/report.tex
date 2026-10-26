@@ -2,7 +2,7 @@
 \usepackage[margin=2.3cm]{geometry}
 \usepackage{amsmath,amssymb}
 \usepackage{graphicx}
-\usepackage{epstopdf}          % converts the .eps figures automatically when compiling with pdflatex
+\usepackage{epstopdf}         
 \usepackage{booktabs}
 \usepackage{multirow}
 \usepackage{float}
@@ -14,7 +14,7 @@
 \graphicspath{{figures/}}
 
 \title{\textbf{Glucose--Insulin Dynamics in Type 1 Diabetes:\\ the Bergman Minimal Model and a Hybrid Universal Neural ODE}}
-\author{Leora Modi (2023B4AD0866G), Saee Brahmankar (2023B4AD0909G), Meghana Mahesh (2023B1AD0682G), Prateek Singhal (2024ADPS0830G), Atharva Sawant (2024ADPS0872G)}
+\author{Leora Modi (2023B4AD0866G), Saee Brahmankar (2023B4AD0909G), \\Meghana Mahesh (2023B1AD0682G), Prateek Singhal (2024ADPS0830G), \\Atharva Sawant (2024ADPS0872G)} 
 \date{Mathematical Modelling -- Group Project}
 
 \begin{document}
@@ -29,7 +29,7 @@ Type 1 diabetes is an autoimmune disease that destroys the insulin-producing $\b
 
 The Bergman minimal model \cite{bergman1979} is the classic compact description of glucose--insulin interaction. It is interpretable --- each parameter has a physiological meaning --- but describes the absorption of a meal from the gut only crudely. Machine-learning forecasters can be flexible but are black boxes that need much data and can violate physical laws. \emph{Universal differential equations} \cite{rackauckas2020} combine the two: known mechanisms stay as equations and a neural network learns only the unknown part.
 
-\paragraph{Objectives.}
+\paragraph{Objectives}
 \begin{enumerate}
   \item Formulate a Bergman-type model for Type 1 diabetes driven by recorded insulin and meals.
   \item Analyse it: equilibrium, stability, identifiability, local and global sensitivity, and numerical convergence.
@@ -88,7 +88,7 @@ Patient &  &  &  &  &  &  \\
 Figure~\ref{fig:diagram} shows the model structure.
 \begin{figure}[H]
 \centering
-\resizebox{\textwidth}{!}{\input{diagrams/compartment_diagram.tex}}
+\resizebox{\textwidth}{!}{\input{compartment_diagram.tex}}
 \caption{Compartment diagram. Black: insulin absorption and action; blue: glucose; red: gut, whose transfer rates are neural networks in the hybrid model.}
 \label{fig:diagram}
 \end{figure}
@@ -132,7 +132,7 @@ The slowest return rate, $\min(p_2,\,p_1+X^*,\,k_{abs})$, sets how long a distur
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.55\textwidth]{phase_portrait.eps}
+\includegraphics[width=0.55\textwidth]{phase_portrait.png}
 \caption{Phase portrait for the reference patient (HUPA0016P, fitted parameters, own basal rate 0.88\,U/h): from any starting glucose and insulin action, trajectories converge to the equilibrium without oscillating.}
 \label{fig:phase}
 \end{figure}
@@ -163,7 +163,7 @@ $k_{abs}$ & 0.03 & 0.12 \\
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.45\textwidth]{identifiability_corr.eps}
+\includegraphics[width=0.45\textwidth]{identifiability_corr.png}
 \caption{Median absolute correlation between parameter estimates across patients. Strongly correlated pairs can compensate for each other and are hard to estimate separately.}
 \label{fig:ident}
 \end{figure}
@@ -173,8 +173,8 @@ For a reference patient --- the one whose fitted fasting equilibrium is closest 
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.49\textwidth]{local_sensitivity.eps}\hfill
-\includegraphics[width=0.49\textwidth]{sobol.eps}
+\includegraphics[width=0.49\textwidth]{local_sensitivity.png}\hfill
+\includegraphics[width=0.49\textwidth]{sobol.png}
 \caption{Left: normalised local sensitivity of glucose after a meal. Right: first-order ($S_1$) and total ($S_T$) Sobol indices for peak glucose and glucose 2\,h after the meal.}
 \label{fig:sens}
 \end{figure}
@@ -220,7 +220,7 @@ $\Delta t$ (min) & error (mg/dL) & ratio \\
 \end{minipage}\hfill
 \begin{minipage}{0.48\textwidth}
 \centering
-\includegraphics[width=\textwidth]{convergence.eps}
+\includegraphics[width=\textwidth]{convergence.png}
 \captionof{figure}{Euler error vs.\ step size (log--log).}
 \label{fig:conv}
 \end{minipage}
@@ -252,7 +252,7 @@ The answer is yes for what matters to glucose (Table~\ref{tab:sim}, Figure~\ref{
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=\textwidth]{twin_recovery.eps}
+\includegraphics[width=\textwidth]{twin_recovery.png}
 \caption{Twin experiment, held-out meals. Left: stomach-emptying flux --- the hidden true law, the linear Bergman fit, and the hybrid's learned (saturating) law. Right: mean rate of glucose appearance $R_a$; the hybrid recovers the true curve (7\% error vs.\ 41\%).}
 \label{fig:twin}
 \end{figure}
@@ -284,7 +284,7 @@ Data from the UVA/Padova simulator come from a different, richer model (13 state
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=\textwidth]{sim_validation.eps}
+\includegraphics[width=\textwidth]{sim_validation.png}
 \caption{Virtual patients, held-out meals. Left: average meal absorption profile (fraction of the meal appearing in blood per 5 minutes) --- true simulator value vs.\ the mechanistic and hybrid models. Right: forecast RMSE against horizon.}
 \label{fig:sim}
 \end{figure}
@@ -318,21 +318,21 @@ Table~\ref{tab:real} and Figure~\ref{fig:real} compare the four forecasters on h
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=\textwidth]{rmse_horizon_real.eps}
+\includegraphics[width=\textwidth]{rmse_horizon_real.png}
 \caption{Forecast RMSE against horizon on held-out days, for patients seen in training (left) and never seen by the networks (right).}
 \label{fig:real}
 \end{figure}
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=\textwidth]{example_forecasts.eps}
+\includegraphics[width=\textwidth]{example_forecasts.png}
 \caption{Four held-out meals: CGM readings and 4-hour forecasts made at meal time.}
 \label{fig:examples}
 \end{figure}
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.9\textwidth]{learned_gut.eps}
+\includegraphics[width=0.9\textwidth]{learned_gut.png}
 \caption{Learned gut rate factors $h_1(Q_1)$, $h_2(Q_2)$; $h=1$ is the mechanistic model.}
 \label{fig:gut}
 \end{figure}
@@ -351,7 +351,7 @@ The three tests tell a consistent story. When the rest of the model is right (tw
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.75\textwidth]{data_one_day.eps}
+\includegraphics[width=0.75\textwidth]{data_one_day.png}
 \caption{One day of real data (patient HUPA0001P): glucose rises sharply around 02:00 with no logged meal.}
 \label{fig:data}
 \end{figure}
@@ -362,7 +362,7 @@ The three tests tell a consistent story. When the rest of the model is right (tw
 We adapted the Bergman minimal model to Type 1 diabetes, proved that its basal equilibrium is a unique, stable node with fasting glucose $G^*=p_1G_b/(p_1+S_II^*)$, identified which parameters the data can and cannot determine, and showed with Sobol analysis that insulin sensitivity and $G_b$ dominate the meal response. Embedding small mass-conserving neural networks in the gut gave a hybrid universal differential equation that recovers a hidden absorption law in a controlled test, and on real patients matches or beats both the mechanistic model and an LSTM, especially for unseen patients and long horizons, while remaining interpretable. The main obstacle to accurate real-world forecasting is unrecorded behaviour, which future work should model as latent inputs.
 
 \section*{Acknowledgement of AI tools}
-Claude (Anthropic, accessed through claude.ai) was used to locate public datasets, suggest the model structure, analysis and validation design, write and debug Python code for the notebook, and draft and typeset this report. All equations, code and results were checked, run and edited by the group, and every member can explain them.
+Claude (Anthropic, accessed through claude.ai) was used to locate public datasets, suggest the model structure, analysis and validation design, write and debug Python code for the notebook, and draft and typeset this report. All equations, code and results were checked, run and edited by the group.
 
 \begin{thebibliography}{99}
 \bibitem{bergman1979} R.~N. Bergman, Y.~Z. Ider, C.~R. Bowden, C.~Cobelli. Quantitative estimation of insulin sensitivity. \emph{American Journal of Physiology} 236(6):E667--E677, 1979.
