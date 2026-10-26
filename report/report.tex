@@ -14,7 +14,7 @@
 \graphicspath{{figures/}}
 
 \title{\textbf{Glucose--Insulin Dynamics in Type 1 Diabetes:\\ the Bergman Minimal Model and a Hybrid Universal Neural ODE}}
-\author{Leora Modi (2023B4AD0866G), Saee Brahmankar (2023B4AD0909G), Meghana Mahesh (2023B1AD0682G), Prateek Singhal (2024ADPS0830G), Atharva Sawant (2024ADPS0872G)} \textcolor{red}}
+\author{Leora Modi (2023B4AD0866G), Saee Brahmankar (2023B4AD0909G), Meghana Mahesh (2023B1AD0682G), Prateek Singhal (2024ADPS0830G), Atharva Sawant (2024ADPS0872G)}
 \date{Mathematical Modelling -- Group Project}
 
 \begin{document}
@@ -126,7 +126,7 @@ The equilibrium exists and is unique for all positive parameters. Fasting glucos
 \[
 \lambda\in\{-k_d,\,-k_d,\,-k_e,\,-k_{abs},\,-k_{abs},\,-p_2,\,-(p_1+X^*)\},
 \]
-which are real and strictly negative. By the Hartman--Grobman theorem the nonlinear system is locally asymptotically stable, and real eigenvalues mean trajectories approach without oscillation. $\square$
+which are real and strictly negative. By the Hartman--Grobman theorem the nonlinear system is locally asymptotically stable, and real eigenvalues mean trajectories approach without oscillation. 
 
 The slowest return rate, $\min(p_2,\,p_1+X^*,\,k_{abs})$, sets how long a disturbance persists. We confirmed the result numerically for every fitted patient by computing the Jacobian with automatic differentiation: all eigenvalues are real and negative (largest: $-0.0013$\,min$^{-1}$). Figure~\ref{fig:phase} shows trajectories in the $(G,X)$ plane converging to the node.
 
