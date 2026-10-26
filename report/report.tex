@@ -14,8 +14,8 @@
 \graphicspath{{figures/}}
 
 \title{\textbf{Glucose--Insulin Dynamics in Type 1 Diabetes:\\ the Bergman Minimal Model and a Hybrid Universal Neural ODE}}
-\author{Group \textcolor{red}{[Group ID]} \\ \small \textcolor{red}{[Member 1 (ID), Member 2 (ID), Member 3 (ID), Member 4 (ID), Member 5 (ID)]}}
-\date{Mathematical Modelling --- Group Project, November 2026}
+\author{Leora Modi (2023B4AD0866G), Saee Brahmankar (2023B4AD0909G), Meghana Mahesh (2023B1AD0682G), Prateek Singhal (2024ADPS0830G), Atharva Sawant (2024ADPS0872G)} \textcolor{red}}
+\date{Mathematical Modelling -- Group Project, November 2026}
 
 \begin{document}
 \maketitle
@@ -361,21 +361,8 @@ The three tests tell a consistent story. When the rest of the model is right (tw
 \section{Conclusion}
 We adapted the Bergman minimal model to Type 1 diabetes, proved that its basal equilibrium is a unique, stable node with fasting glucose $G^*=p_1G_b/(p_1+S_II^*)$, identified which parameters the data can and cannot determine, and showed with Sobol analysis that insulin sensitivity and $G_b$ dominate the meal response. Embedding small mass-conserving neural networks in the gut gave a hybrid universal differential equation that recovers a hidden absorption law in a controlled test, and on real patients matches or beats both the mechanistic model and an LSTM, especially for unseen patients and long horizons, while remaining interpretable. The main obstacle to accurate real-world forecasting is unrecorded behaviour, which future work should model as latent inputs.
 
-\section*{Contributions}
-\begin{tabular}{@{}ll@{}}
-\toprule
-Member & Contribution \\
-\midrule
-\textcolor{red}{[Name 1]} & Model formulation, equilibrium and stability analysis \\
-\textcolor{red}{[Name 2]} & Sensitivity analysis and simulator validation \\
-\textcolor{red}{[Name 3]} & Parameter estimation and identifiability \\
-\textcolor{red}{[Name 4]} & Hybrid neural ODE design and training \\
-\textcolor{red}{[Name 5]} & Data processing, baselines, evaluation and figures \\
-\bottomrule
-\end{tabular}
-
 \section*{Acknowledgement of AI tools}
-\textcolor{red}{[Edit so it is exactly true for your group]} Claude (Anthropic, accessed through claude.ai) was used to compare candidate project topics, locate public datasets, suggest the model structure, analysis and validation design, write and debug Python code for the notebook, and draft and typeset this report. All equations, code and results were checked, run and edited by the group, and every member can explain them.
+Claude (Anthropic, accessed through claude.ai) was used to locate public datasets, suggest the model structure, analysis and validation design, write and debug Python code for the notebook, and draft and typeset this report. All equations, code and results were checked, run and edited by the group, and every member can explain them.
 
 \begin{thebibliography}{99}
 \bibitem{bergman1979} R.~N. Bergman, Y.~Z. Ider, C.~R. Bowden, C.~Cobelli. Quantitative estimation of insulin sensitivity. \emph{American Journal of Physiology} 236(6):E667--E677, 1979.
